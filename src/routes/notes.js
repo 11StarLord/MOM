@@ -1,13 +1,7 @@
 const	express = require('express');
 const	router = express.Router();
+const	notesController = require('src/controllers/noteController');
 
-const	notes = [
-	{ id: 1, title: 'Primeira nota', contetnt: 'Isso é só um teste' },
-	{ id: 2, title: 'Segunda nota', contetnt: 'Mais um teste' }
-];
-
-router.get('/', (req, res) => {
-	res.json(notes);
-});
+router.get('/', notesController.getAllNotes);
 
 module.exports = router;
